@@ -3,6 +3,8 @@ from discord.ext import commands
 import asyncio
 import random
 from typing import Optional
+import io
+from utils.renderer import render_text_image
 from utils.text_manager import charger_prescripts
 from utils.style import styliser, parse_color
 from utils.state import PrescriptState
@@ -54,7 +56,7 @@ class PrescriptCog(commands.Cog):
         return st
 
     @commands.hybrid_command(name='prescript', with_app_command=True, description='Génère un prescript (option embed)')
-    async def prescript(self, ctx: commands.Context, index: Optional[int] = None, embed: Optional[bool] = False, embed_color: Optional[str] = None, title: Optional[str] = None):
+    async def prescript(self, ctx: commands.Context, index: Optional[int] = None, embed: Optional[bool] = False, embed_color: Optional[str] = None, title: Optional[str] = None, image: Optional[bool] = False, style: Optional[str] = None):
         """Lance l'affichage d'un prescript. Optionnel: `index` pour sélectionner une phrase, `embed` pour utiliser un embed, `embed_color` en hex ou nom, `title` pour changer le titre."""
         prescripts = charger_prescripts("data/prescript.json", "fr")
         if index is not None:
@@ -68,12 +70,31 @@ class PrescriptCog(commands.Cog):
 
         state = self.get_state(ctx.channel.id)
 
+        # apply textual style variants (spaced, glitch, ascii, plain)
+        try:
+            from utils.style import apply_prescript_style
+            texte = apply_prescript_style(texte, style)
+        except Exception:
+            pass
+
         existing = self.tasks.get(ctx.channel.id)
         if existing and not existing.done():
             await ctx.reply("Un prescript est déjà en cours dans ce canal. Utilisez /stop_prescript pour l'arrêter.")
             return
 
-        # envoi initial
+        # render as image (final snapshot) if requested
+        if image:
+            try:
+                png = await render_text_image(texte, bg_color='#0b0b0b', text_color='#eaeaea')
+            except RuntimeError as e:
+                await ctx.reply(f"Renderer unavailable: {e}")
+                return
+            fp = io.BytesIO(png)
+            fp.seek(0)
+            await ctx.reply(file=discord.File(fp, filename="prescript.png"))
+            return
+
+        # envoi initial for progressive text
         if embed:
             color = parse_color(embed_color) or discord.Color.purple()
             embed_obj = discord.Embed(title=title or "Prescript", description="", color=color)

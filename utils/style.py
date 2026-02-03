@@ -44,6 +44,62 @@ def parse_color(s: Optional[str]) -> Optional['discord.Color']:
 	except Exception:
 		return None
 
+
+def espacer_unicode(texte: str, espace: str = '\u2002') -> str:
+	"""Return text with unicode spaced characters between letters."""
+	return espace.join(list(texte))
+
+
+def glitch_text(texte: str, intensity: float = 0.06) -> str:
+	"""Insert occasional diacritics/combining chars to simulate glitchy glyphs.
+
+	intensity: fraction of characters to glitch (0..1)
+	"""
+	import random
+	combs = ['\u0300', '\u0301', '\u0302', '\u0303', '\u0308', '\u0336']
+	out = []
+	for ch in texte:
+		out.append(ch)
+		if ch.strip() and random.random() < intensity:
+			out.append(random.choice(combs))
+	return ''.join(out)
+
+
+def ascii_frame(texte: str, width: int = 60) -> str:
+	"""Wrap text in a simple ASCII box preserving line breaks."""
+	lines = []
+	for paragraph in texte.split('\n'):
+		while paragraph:
+			lines.append(paragraph[:width])
+			paragraph = paragraph[width:]
+		if not paragraph and texte.endswith('\n'):
+			lines.append('')
+	maxw = max((len(l) for l in lines), default=0)
+	top = '+' + '-' * (maxw + 2) + '+'
+	middle = '\n'.join('| ' + l.ljust(maxw) + ' |' for l in lines)
+	return f"{top}\n{middle}\n{top}"
+
+
+def apply_prescript_style(texte: str, variant: Optional[str] = None) -> str:
+	"""Apply a high-level prescript text style variant.
+
+	Supported variants: None|'spaced'|'glitch'|'ascii'|'plain'
+	"""
+	if not variant:
+		return texte
+	v = variant.lower()
+	if v == 'spaced':
+		# use thin space for better visual
+		return espacer_unicode(texte, '\u2009')
+	if v == 'glitch':
+		return glitch_text(texte, intensity=0.08)
+	if v == 'ascii':
+		return ascii_frame(texte)
+	if v == 'plain':
+		return texte
+	# default fallback
+	return texte
+
 	if s in name_map:
 		return name_map[s]
 	if s.startswith('#'):
