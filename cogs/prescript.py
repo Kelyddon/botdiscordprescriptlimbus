@@ -22,7 +22,57 @@ from utils.prescript_generator import generate_prescript
 from utils.style import en_bloc_code, parse_color, apply_prescript_style
 from utils.state import PrescriptState
 
-PAUSES_SPECIFIQUES = {'.': 0.5, ',': 0.25, '!': 0.6, '?': 0.6, '\n': 0.4, '…': 0.8, '-': 0.12}
+# -----------------------------------------------------------------------------
+# RÉGLAGES DE VITESSE (faciles à modifier)
+# -----------------------------------------------------------------------------
+# 1) Change seulement cette valeur pour régler rapidement la vitesse globale:
+#    "lent" | "normal" | "rapide" | "tres_rapide"
+MODE_VITESSE = "rapide"
+
+# 2) Tu peux ensuite ajuster un preset si besoin.
+#    - delay_min / delay_max: délai entre deux mises à jour (plus petit = plus rapide)
+#    - chunk_min / chunk_max: nombre de caractères envoyés par mise à jour (plus grand = plus rapide)
+#    - pauses: pauses spéciales sur la ponctuation (plus petit = plus rapide)
+VITESSE_PRESETS = {
+    "lent": {
+        "delay_min": 0.03,
+        "delay_max": 0.08,
+        "chunk_min": 3,
+        "chunk_max": 8,
+        "pauses": {'.': 0.5, ',': 0.25, '!': 0.6, '?': 0.6, '\n': 0.4, '…': 0.8, '-': 0.12},
+    },
+    "normal": {
+        "delay_min": 0.02,
+        "delay_max": 0.05,
+        "chunk_min": 4,
+        "chunk_max": 10,
+        "pauses": {'.': 0.28, ',': 0.16, '!': 0.3, '?': 0.3, '\n': 0.2, '…': 0.35, '-': 0.08},
+    },
+    "rapide": {
+        "delay_min": 0.01,
+        "delay_max": 0.03,
+        "chunk_min": 6,
+        "chunk_max": 12,
+        "pauses": {'.': 0.18, ',': 0.1, '!': 0.2, '?': 0.2, '\n': 0.12, '…': 0.25, '-': 0.05},
+    },
+    "tres_rapide": {
+        "delay_min": 0.005,
+        "delay_max": 0.015,
+        "chunk_min": 10,
+        "chunk_max": 18,
+        "pauses": {'.': 0.08, ',': 0.05, '!': 0.1, '?': 0.1, '\n': 0.06, '…': 0.12, '-': 0.02},
+    },
+}
+
+# 3) Sécurise la valeur: si MODE_VITESSE est invalide, on retombe sur "rapide".
+_vitesse = VITESSE_PRESETS.get(MODE_VITESSE, VITESSE_PRESETS["rapide"])
+
+# 4) Variables utilisées par le reste du code.
+PAUSES_SPECIFIQUES = _vitesse["pauses"]
+CHUNK_MIN = _vitesse["chunk_min"]
+CHUNK_MAX = _vitesse["chunk_max"]
+BASE_DELAY_MIN = _vitesse["delay_min"]
+BASE_DELAY_MAX = _vitesse["delay_max"]
 
 
 def _is_ascii_box(text: str) -> bool:
@@ -209,8 +259,8 @@ class PrescriptCog(commands.Cog):
         # 6) Envoyer le message vide, puis lancer la tâche de révélation progressive
         message, mode = await self._send_initial_message(ctx, bool(embed), title, embed_color)
 
-        chunk = random.randint(3, 8)
-        base_delay = random.uniform(0.03, 0.08)
+        chunk = random.randint(CHUNK_MIN, CHUNK_MAX)
+        base_delay = random.uniform(BASE_DELAY_MIN, BASE_DELAY_MAX)
         task = asyncio.create_task(self._display_progressive(message, texte, state, delai_base=base_delay, chunk_size=chunk, mode=mode, embed_title=title, embed_color=embed_color))
         self.tasks[ctx.channel.id] = task
 
