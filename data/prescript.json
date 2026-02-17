@@ -7,5 +7,163 @@
       "Suis la lueur qui n'existe pas.",
       "La clef est là où le soleil ne touche jamais."
     ]
+  },
+  "en": {
+    "prescripts": [
+      "Pack a lunchbox and consume it on top of a trash can in the streets of District 11 at 1 PM today.",
+      "Bake dacquoise while the hour hand rests between 7 and 8, and eat it while watching a movie.",
+      "Initiate a game of Never Have I Ever with the first five people you encounter. When one folds a finger, break it.",
+      "Neatly clip the nails of the sixty-second person you come across.",
+      "Pet quadrupedal animals five times.",
+      "Spin a wheel and throw a cake at the person determined by the result.",
+      "Consume eight crabs stored at room temperature and ripe persimmon at once.",
+      "At the railing on the roof of a building, shout out the name of the person you dislike, then jump off. The height of the building does not matter.",
+      "After a meal, discard all dishes that were used to serve it.",
+      "On the morning after receiving the Prescript, drink three cups of water as soon as you get up.",
+      "Race against residents that live in the same building as you to District 7. Measure the distance every twenty-three minutes and disqualify the one farthest away from the destination.",
+      "Within three days, knit a scarf with a butterfly pattern.",
+      "Dial any number. Give a New Year's greetings and words of blessing to whoever receives the call.",
+      "See green from a white wall.",
+      "When hungry, consume a Cheeki's cheeseburger with added onion.",
+      "Fold thirty-nine paper cranes and throw them from the rooftop.",
+      "When your eyes meet another person's, nod at them.",
+      "Return to your home this instant. You may leave once a dog barks in front of your house one time.",
+      "Wear light green clothing and take 10 steps in a triangle-shaped alley.",
+      "Call the first person you meet a homosexual, then proceed to kiss them.",
+      "Do not go home until you have finished reading the value of e.",
+      "In 400,000 meters, turn right.",
+      "Sleep for a total of 800 hours per day.",
+      "Only eat and write with your right hand.",
+      "Order something online you don't need.",
+      "Submit to the city's prescripts.",
+      "Waste your money on someone.",
+      "Go to sleep. You must dream about a bird locked in a cage. The bird's color does not matter.",
+      "Ensure that 2 plus 2 is equal to 5.",
+      "Visit the Index and receive your personalized reward.",
+      "Retrace all the steps you took today. Once you are back in bed, touch yourself.",
+      "Repeat yesterday's prescript. You must ensure that you wear glasses.",
+      "Come back tomorrow and act out your prescript twice.",
+      "Obey the first command you are given today.",
+      "Purchase something you will never use",
+      "Find someone at the beach and make sure they never speak again.",
+      "Go to a place you call home.",
+      "Go somewhere unfamiliar and observe quietly for 10 minutes.",
+      "When you see a TV-headed fellow, subscribe to their Patreon. This prescript was 100% not forged.",
+      "Stand perfectly still and listen to breathing.",
+      "Leave a small gift at the nearest trash can.",
+      "Do nothing for exactly fifteen minutes and then keep going.",
+      "Sing the national anthem of your country at noon.",
+      "Write down the last dream you remember and burn it.",
+      "Place an object you found today in a safe place.",
+      "Speak only in riddles until the next sunrise.",
+      "Count backwards from twenty and do not stop when interrupted.",
+      "Finish the task you started earlier today, no matter how small.",
+      "Do not tell anyone about this prescript."
+    ],
+    "pools": {
+      "LOCATION_A": [
+        "beach", "store", "house", "apartment complex", "ocean", "hotel", "motel",
+        "place you cherish", "place you keep your family", "restaurant", "place to eat", "theater",
+        "library", "school", "factory", "backstreet alleyway", "nest", "empty field", "graveyard",
+        "basement", "alley", "parking lot", "abandoned lot", "office", "workshop", "place no one checks twice",
+        "place people pass through quickly", "place that won't last forever", "place that smells like dust",
+        "place that echoes", "place you were told not to enter", "public restroom", "train platform",
+        "lighthouse", "secret location only you know about", "place you call home", "place they'd call home",
+        "place you'd hide a body"
+      ],
+      "PREPRESCRIPT": [
+        "Pack a lunchbox and consume it on top of a trash can in the streets of District 11 at 1 PM today.",
+        "Bake dacquoise while the hour hand rests between 7 and 8, and eat it while watching a movie.",
+        "Initiate a game of Never Have I Ever with the first five people you encounter. When one folds a finger, break it.",
+        "Neatly clip the nails of the sixty-second person you come across.",
+        "Pet quadrupedal animals five times.",
+        "Spin a wheel and throw a cake at the person determined by the result.",
+        "Consume eight crabs stored at room temperature and ripe persimmon at once.",
+        "At the railing on the roof of a building, shout out the name of the person you dislike, then jump off.",
+        "After a meal, discard all dishes that were used to serve it.",
+        "On the morning after receiving the Prescript, drink three cups of water as soon as you get up.",
+        "Race against residents that live in the same building as you to District 7. Measure the distance every twenty-three minutes and disqualify the one farthest away from the destination.",
+        "Within three days, knit a scarf with a butterfly pattern.",
+        "Dial any number. Give a New Year's greeting and words of blessing to whoever receives the call.",
+        "See green from a white wall.",
+        "When hungry, consume a Cheeki's cheeseburger with added onion.",
+        "Fold thirty-nine paper cranes and throw them from the rooftop.",
+        "When your eyes meet another person's, nod at them.",
+        "Return to your home this instant. You may leave once a dog barks in front of your house one time.",
+        "Wear light green clothing and take 10 steps in a triangle-shaped alley.",
+        "Call the first person you meet a homosexual, then proceed to kiss them.",
+        "Do not go home until you have finished reading the value of e.",
+        "In 400,000 meters, turn right.",
+        "Sleep for a total of 800 hours per day.",
+        "Only eat and write with your right hand.",
+        "Order something online you don't need.",
+        "Submit to the city's prescripts.",
+        "Waste your money on someone.",
+        "Go to sleep. You must dream about a bird locked in a cage.",
+        "Ensure that 2 plus 2 is equal to 5."
+      ],
+      "PERSON_IDENTIFIER": [
+        "ugly", "beautiful", "handsome", "cute", "pretty", "plain", "attractive", "unattractive",
+        "young", "old", "middle-aged", "elderly", "youthful", "aged", "tall", "short",
+        "small", "big", "thin", "fat", "skinny", "chubby", "lean", "muscular", "weak", "strong",
+        "pale", "dark", "tan", "scarred", "freckled", "wrinkled", "smooth", "blonde", "brunette",
+        "black-haired", "red-haired", "bald"
+      ],
+      "COLOR1": [
+        "blue", "black", "red", "brown", "velvet", "yellow", "pink", "white", "grey", "green",
+        "light green", "light red", "dark red", "dark green", "cyan", "teal", "purple", "violet",
+        "magenta", "orange", "amber", "gold", "silver", "beige", "tan", "ivory", "cream", "charcoal",
+        "maroon", "navy", "indigo", "crimson", "scarlet", "lime", "mint", "olive", "peach", "lavender"
+      ],
+      "CLOTHING": [
+        "hat", "cap", "hood", "hoodie", "cloak", "coat", "jacket", "vest", "shirt", "t-shirt",
+        "sweater", "blouse", "dress", "skirt", "robe", "pants", "trousers", "jeans", "shorts", "leggings",
+        "socks", "stockings", "tights", "shoes", "boots", "sandals", "slippers", "gloves", "mittens", "scarf",
+        "shawl", "belt", "suspenders", "mask", "face covering", "veil", "glasses", "goggles"
+      ],
+      "MATERIAL_CONDITION": [
+        "cloth", "fabric", "leather", "denim", "wool", "cotton", "linen", "silk", "velvet", "fur",
+        "rubber", "plastic", "metal", "steel", "iron", "brass", "copper", "bronze", "rusted", "torn",
+        "patched", "worn", "new", "stained", "dirty", "clean"
+      ],
+      "GAMES": [
+        "Patty Cake", "Never Have I Ever", "Truth or Dare", "Tag", "Hide and Seek", "Peekaboo",
+        "Hopscotch", "Simon Says", "Red Light Green Light", "Freeze Tag", "Marco Polo", "Chess", "Checkers",
+        "Backgammon", "Dominoes", "Twister", "Charades", "Would You Rather", "Paintball", "Rock Paper Scissors"
+      ],
+      "OBJCS": [
+        "pen and paper", "pencil", "eraser", "apples", "empty bottle", "glass cup", "ceramic mug",
+        "notebook", "folder", "envelope", "plant with leaves", "dead plant", "potted plant",
+        "duct tape", "roll of tape", "string", "rope", "charcoal", "chalk", "ash", "something plastic",
+        "plastic container", "plastic bag", "wooden chair", "broken stool", "pack of playing cards", "single playing card",
+        "dice", "spoon", "fork", "knife", "empty plate", "crayons", "paint", "paintbrush",
+        "toilet paper", "paper towels", "tissues", "old photograph", "key", "keyring", "locked box",
+        "backpack", "cardboard box", "flashlight", "battery", "clock", "broken clock", "mirror"
+      ],
+      "TOPIC": [
+        "love", "lie", "death", "fear", "regret", "hope", "loneliness", "trust", "guilt", "desire",
+        "your secrets", "your desires", "your fears", "your past", "your future", "memories", "forgotten memories",
+        "dreams", "recurring dreams", "nightmares", "life", "gaming", "the city", "a movie"
+      ],
+      "ACTIVITIES": [
+        "commit a felony", "steal money", "betray a friend", "become a proxy", "play games",
+        "talk about your secrets", "shake someone's hand", "drink something", "sit on the train tracks",
+        "travel somewhere new", "do a backflip", "do a frontflip", "roll a dice", "swing a baseball bat"
+      ],
+      "VERBS": [
+        "touch", "hold", "push", "pull", "lift", "drop", "carry", "throw", "toss", "drag",
+        "place", "move", "slide", "press", "tap", "knock on", "open", "close", "lock", "unlock",
+        "bind", "insert into", "use as a weapon", "paint", "write on", "break"
+      ],
+      "STARTER": [
+        "", "", "", "pause briefly, ", "wait a moment, ", "continue, ", "proceed, ", "then, ",
+        "look around, ", "look forward, ", "take a step and ", "take another step and ", "stop moving and "
+      ],
+      "ADDITIONAL_RANDOM": [
+        "", " backwards", " on a rooftop", " at a ", " slowly", " carefully", " without stopping",
+        " without speaking", " twice", " while being observed", " without looking back", " without making noise",
+        " while hearing a sound that is not there", " until it feels wrong", " alone", " with others nearby"
+      ]
+    }
   }
 }
